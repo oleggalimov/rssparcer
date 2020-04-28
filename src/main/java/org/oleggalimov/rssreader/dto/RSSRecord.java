@@ -1,10 +1,15 @@
 package org.oleggalimov.rssreader.dto;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -12,27 +17,36 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @Builder
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonPropertyOrder({
+        "channelTitle",
+        "channelLink",
+        "channelDescription",
+        "itemTitle",
+        "itemLink",
+        "itemPubDate",
+        "itemGuid",
+        "itemDescription"
+})
 public class RSSRecord {
     @Id
     String id;
-    //channel elements
-    @Column
-    String channelTitle;
-    @Column
-    String channelLink;
-    @Column
-    String channelDescription;
+
+    @Embedded
+    RSSChannel channel;
 
     //item elements
     @Column
-    String itemTitle;
+    String title;
     @Column
-    String itemLink;
+    String link;
     @Column
-    String itemPubDate;
+    String pubDate;
     @Column
-    String itemGuid;
+    String guid;
     @Column
-    String itemDescription;
+    String description;
 
 }
