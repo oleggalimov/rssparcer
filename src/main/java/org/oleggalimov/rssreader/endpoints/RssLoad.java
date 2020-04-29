@@ -40,7 +40,7 @@ public class RssLoad {
         }
         Document document = Jsoup.parse(new URL(request.getUrl()), 60000);
         List<FeedRecord> data = fgRawDataConverter.convert(request.getExtractingRule(), document);
-        if (data==null) {
+        if (data==null || data.size()==0) {
             return false;
         }
         try {
