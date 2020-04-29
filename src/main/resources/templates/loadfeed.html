@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RSS loader</title>
+</head>
+<body>
+<h1>
+    Here you can load your data from remote rss-source:
+</h1>
+<table>
+    <tr>
+        <td>
+            <label>URL:</label>
+        </td>
+        <td>
+            <input id="rssSource" type="url"/>
+        </td>
+        <td>
+            <select id="rssType">
+                <option value="" disabled="disabled" selected="selected">Select rss-source type</option>
+                <option value="RSS" selected="selected">RSS</option>
+                <option value="RBC_NEWS">RBC news feed</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="loadData()">Submit</button>
+        </td>
+    </tr>
+</table>
+<script>
+    function loadData() {
+        var url = document.getElementById("rssSource").value;
+        var type = document.getElementById("rssType").value;
+        var request = new Object();
+        request.url = url;
+        request.type = type;
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "api/rss/load", true);
+        xhttp.setRequestHeader('Content-Type', 'application/json');
+        xhttp.send(JSON.stringify(request));
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+               if (this.status == 200) {
+                   alert("The loading result is: "+xhttp.responseText);
+               } else {
+                    alert("The loading result is: "+xhttp.responseText);
+               }
+        }
+        }
+    }
+
+</script>
+</body>
+</html>

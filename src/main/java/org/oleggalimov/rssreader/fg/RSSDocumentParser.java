@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class DocumentParserImpl implements IDocumentParser {
+public class RSSDocumentParser implements IHTMLDocumentParser {
     @Override
     public List<RSSRecord> parse(Document document) {
         //ищем описание канала

@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RSSRecordsRepository extends JpaRepository <RSSRecord, String> {
+public interface IRSSRecordsRepository extends JpaRepository <RSSRecord, String> {
 }
