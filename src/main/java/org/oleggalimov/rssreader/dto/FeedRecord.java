@@ -29,9 +29,9 @@ import javax.persistence.Id;
         "itemGuid",
         "itemDescription"
 })
-public class RSSRecord {
+public class FeedRecord {
     @Id
-    String id;
+    String guid;
 
     @Embedded
     RSSChannel channel;
@@ -43,9 +43,11 @@ public class RSSRecord {
     String link;
     @Column
     String pubDate;
-    @Column
-    String guid;
+
     @Column
     String description;
+
+    @Column
+    Long loadEpochTimeStamp;
 
 }

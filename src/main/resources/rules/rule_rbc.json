@@ -1,34 +1,36 @@
 {
-  "RSS": false,
-  "rootElement": {
-    "operation": "CLASS",
-    "arg": "item"
+  "rss":false,
+  
+  "container":{
+    "searchMethod":"ATTR_VALUE",
+    "attrName":"class",
+    "pattern":"item__wrap l-col-center"
   },
-  "childNode": {
-    "guid": {
-      "operation": "CLASS",
-      "arg": "item__link",
-      "next": {
-        "operation": "ATTR",
-        "arg": "href"
-      }
-    },
-    "title": {
-      "type": "TEXT",
-      "arg": "null"
-    },
-    "description": {
-      "operation": "COPY",
-      "arg": "title"
-    },
-    "pubDate": {
-      "type": "OWN_TEXT",
-      "value": "[0-9]{2}:[0-9]{2}",
-      "next": {
-        "type": "TEXT",
-        "arg": "null"
-      }
-    },
-    "channel": ""
+  "title":{
+    "searchMethod":"ATTR_VALUE",
+    "attrName":"class",
+    "pattern":"item__title rm-cm-item-text"
+  },
+  "link":{
+    "searchMethod":"ATTR_VALUE",
+    "attrName":"class",
+    "pattern":"item__link",
+    "nestedAttr":"href"
+
+  },
+  "pubDate":{
+    "searchMethod":"VALUE",
+    "pattern":"[0-9]{2}:[0-9]{2}"
+  },
+  "guid":{
+    "searchMethod":"ATTR_VALUE",
+    "attrName":"class",
+    "pattern":"item__link",
+    "nestedAttr":"href"
+  },
+  "channel":{
+    "channelTitle":"RBC Feed",
+    "channelLink":"https://www.rbc.ru/short_news",
+    "channelDescription":"Новости РБК"
   }
 }

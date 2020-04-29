@@ -12,5 +12,6 @@ public class ExtractingRule {
     RuleElement link;
     RuleElement pubDate;
     RuleElement guid;
+    RuleElement description;
     RSSChannel channel;
 }
