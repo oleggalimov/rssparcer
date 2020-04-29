@@ -14,14 +14,20 @@
             <label>URL:</label>
         </td>
         <td>
-            <input id="rssSource" type="url"/>
+            <input id="feedSource" type="url"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Rule:</label>
         </td>
         <td>
-            <select id="rssType">
-                <option value="" disabled="disabled" selected="selected">Select rss-source type</option>
-                <option value="RSS" selected="selected">RSS</option>
-                <option value="RBC_NEWS">RBC news feed</option>
-            </select>
+            <textarea  id="feedRule"  rows="30" cols="60"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>
+
         </td>
         <td>
             <button onclick="loadData()">Submit</button>
@@ -30,11 +36,12 @@
 </table>
 <script>
     function loadData() {
-        var url = document.getElementById("rssSource").value;
-        var type = document.getElementById("rssType").value;
+        var url = document.getElementById("feedSource").value;
+        var extractingRuleString = document.getElementById("feedRule").value;
+        var extractingRuleObject = JSON.parse(extractingRuleString);
         var request = new Object();
         request.url = url;
-        request.type = type;
+        request.extractingRule = extractingRuleObject;
 
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", "api/rss/load", true);

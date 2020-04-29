@@ -5,7 +5,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.oleggalimov.rssreader.cg.RawDataConverter;
 import org.oleggalimov.rssreader.da.IRSSRecordsRepository;
-import org.oleggalimov.rssreader.dto.FormRequest;
+import org.oleggalimov.rssreader.dto.ParseFeedRequest;
 import org.oleggalimov.rssreader.dto.RSSRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,13 +32,13 @@ public class RssLoad {
     }
 
     @PostMapping("api/rss/load")
-    public boolean loadRSS(@RequestBody FormRequest request) throws IOException {
+    public boolean loadRSS(@RequestBody ParseFeedRequest request) throws IOException {
         log.debug(request.toString());
-        if (request.getUrl()==null || request.getType()==null) {
+        if (request.getUrl()==null || request.getExtractingRule()==null) {
             return false;
         }
         Document document = Jsoup.parse(new URL(request.getUrl()), 60000);
-        List<RSSRecord> data = dataConverter.getData(request.getType(), document);
+        List<RSSRecord> data = dataConverter.getData(request.getExtractingRule(), document);
         if (data==null) {
             return false;
         }

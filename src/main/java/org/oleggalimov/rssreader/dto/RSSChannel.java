@@ -1,14 +1,10 @@
 package org.oleggalimov.rssreader.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 import javax.persistence.Embeddable;
 
-@Getter
-@Setter
-@ToString
+@Data
 @Embeddable
 public class RSSChannel {
     String channelTitle;
