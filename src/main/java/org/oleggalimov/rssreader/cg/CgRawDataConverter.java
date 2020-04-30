@@ -15,7 +15,7 @@ import java.util.List;
 
 @Service
 @Slf4j
-public class FgRawDataConverter {
+public class CgRawDataConverter {
     IHTMLDocumentParser ihtmlDocumentParser;
     IRSSParser rssDocumentParser;
 
