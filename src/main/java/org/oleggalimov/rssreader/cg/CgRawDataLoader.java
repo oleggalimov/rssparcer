@@ -3,7 +3,6 @@ package org.oleggalimov.rssreader.cg;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.oleggalimov.rssreader.dto.ParseFeedRequest;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

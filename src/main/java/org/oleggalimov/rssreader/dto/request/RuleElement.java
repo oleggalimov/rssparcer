@@ -1,4 +1,4 @@
-package org.oleggalimov.rssreader.dto;
+package org.oleggalimov.rssreader.dto.request;
 
 import lombok.Data;
 import org.oleggalimov.rssreader.enumerations.SearchMethod;

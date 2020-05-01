@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
@@ -34,7 +31,7 @@ public class FeedRecord {
     String guid;
 
     @Embedded
-    RSSChannel channel;
+    FeedChannel channel;
 
     //item elements
     @Column

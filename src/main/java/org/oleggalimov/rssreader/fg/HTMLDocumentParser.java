@@ -4,10 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.oleggalimov.rssreader.dto.ExtractingRule;
-import org.oleggalimov.rssreader.dto.RSSChannel;
+import org.oleggalimov.rssreader.dto.request.ExtractingRule;
+import org.oleggalimov.rssreader.dto.FeedChannel;
 import org.oleggalimov.rssreader.dto.FeedRecord;
-import org.oleggalimov.rssreader.dto.RuleElement;
+import org.oleggalimov.rssreader.dto.request.RuleElement;
 import org.oleggalimov.rssreader.enumerations.SearchMethod;
 import org.springframework.stereotype.Service;
 
@@ -33,7 +33,7 @@ public class HTMLDocumentParser implements IHTMLDocumentParser {
             log.error("No rawFeedRecords");
             return null;
         }
-        RSSChannel channel = rule.getChannel();
+        FeedChannel channel = rule.getChannel();
         return rawFeedRecords.stream()
                 .map(element -> FeedRecord.builder()
                         .channel(channel)

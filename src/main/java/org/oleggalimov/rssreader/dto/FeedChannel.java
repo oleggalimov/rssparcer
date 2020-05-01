@@ -6,7 +6,7 @@ import javax.persistence.Embeddable;
 
 @Data
 @Embeddable
-public class RSSChannel {
+public class FeedChannel {
     String channelTitle;
     String channelLink;
     String channelDescription;

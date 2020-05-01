@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>RSS loader</title>
+    <title>Feed loader</title>
 </head>
 <body>
 <h1>
@@ -34,30 +34,6 @@
         </td>
     </tr>
 </table>
-<script>
-    function loadData() {
-        var url = document.getElementById("feedSource").value;
-        var extractingRuleString = document.getElementById("feedRule").value;
-        var extractingRuleObject = JSON.parse(extractingRuleString);
-        var request = new Object();
-        request.url = url;
-        request.extractingRule = extractingRuleObject;
 
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "api/rss/load", true);
-        xhttp.setRequestHeader('Content-Type', 'application/json');
-        xhttp.send(JSON.stringify(request));
-        xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-               if (this.status == 200) {
-                   alert("The loading result is: "+xhttp.responseText);
-               } else {
-                    alert("The loading result is: "+xhttp.responseText);
-               }
-        }
-        }
-    }
-
-</script>
 </body>
 </html>

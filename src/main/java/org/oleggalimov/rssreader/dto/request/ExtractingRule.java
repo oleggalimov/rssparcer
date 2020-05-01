@@ -1,7 +1,8 @@
-package org.oleggalimov.rssreader.dto;
+package org.oleggalimov.rssreader.dto.request;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.oleggalimov.rssreader.dto.FeedChannel;
 
 @Data
 @NoArgsConstructor
@@ -13,5 +14,5 @@ public class ExtractingRule {
     RuleElement pubDate;
     RuleElement guid;
     RuleElement description;
-    RSSChannel channel;
+    FeedChannel channel;
 }

@@ -3,7 +3,7 @@ package org.oleggalimov.rssreader.fg;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.oleggalimov.rssreader.dto.FeedRecord;
-import org.oleggalimov.rssreader.dto.RSSChannel;
+import org.oleggalimov.rssreader.dto.FeedChannel;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class RSSParser implements IRSSParser {
         if (children == null || children.size() == 0) {
             return null; //в <channel> вложен пустой элемент
         }
-        RSSChannel channelObject = new RSSChannel();
+        FeedChannel channelObject = new FeedChannel();
         List<FeedRecord> feedRecords = new ArrayList<>();
         children.forEach(element -> {
             String tagName = element.tagName();

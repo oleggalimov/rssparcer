@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class RssList {
+public class FeedList {
     private IFeedRecordsRepository repository;
 
     @Autowired
     public void setRepository(IFeedRecordsRepository repository) {
         this.repository = repository;
     }
-    @GetMapping("api/rss/list/")
+    @GetMapping("api/feed/list/")
     public List<FeedRecord> getAllRssRecords() {
         return this.repository.findAll();
     }

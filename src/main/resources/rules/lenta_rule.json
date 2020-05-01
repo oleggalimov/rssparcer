@@ -1,6 +1,6 @@
 {
+  "url": "https://lenta.ru/parts/news/",
   "rss":false,
-
   "container":{
     "searchMethod":"ATTR_VALUE",
     "attrName":"class",

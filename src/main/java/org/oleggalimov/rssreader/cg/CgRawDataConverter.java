@@ -2,7 +2,7 @@ package org.oleggalimov.rssreader.cg;
 
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.nodes.Document;
-import org.oleggalimov.rssreader.dto.ExtractingRule;
+import org.oleggalimov.rssreader.dto.request.ExtractingRule;
 import org.oleggalimov.rssreader.dto.FeedRecord;
 import org.oleggalimov.rssreader.fg.HTMLDocumentParser;
 import org.oleggalimov.rssreader.fg.IHTMLDocumentParser;

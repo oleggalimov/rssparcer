@@ -4,16 +4,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.oleggalimov.rssreader.cg.CgRawDataConverter;
 import org.oleggalimov.rssreader.cg.CgRawDataLoader;
 import org.oleggalimov.rssreader.da.IFeedRecordsRepository;
-import org.oleggalimov.rssreader.dto.ExtractingRule;
+import org.oleggalimov.rssreader.dto.request.ExtractingRule;
 import org.oleggalimov.rssreader.tasks.LoadFeedTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.*;
 
