@@ -158,8 +158,10 @@
                 <div class="section-title" data-aos="fade-up">
                     <h2>Records</h2>
                     <p>Press button for load or update feed</p>
-                    <br />
+                    <br/>
                     <button id="loadAllRecords">Load feed</button>
+                    <br/>
+                    <h3 id="updateTime"></h3>
                 </div>
             </div>
             <div class="container" id="records">
@@ -327,17 +329,17 @@
                 iElement.setAttribute("style", "color: #11dbcf;");
                 
                 var paragraph = document.createElement("p");
-                paragraph.appendChild(document.createTextNode("Title: "+recordElement.title));
+                paragraph.appendChild(document.createTextNode("TITLE:: "+recordElement.title));
                 paragraph.appendChild(document.createElement('br'));
-                paragraph.appendChild(document.createTextNode("Description: "+recordElement.description));
+                paragraph.appendChild(document.createTextNode("DESCRIPTION:: "+recordElement.description));
                 paragraph.appendChild(document.createElement('br'));
-                paragraph.appendChild(document.createTextNode("Source: "+recordElement.link));
+                paragraph.appendChild(document.createTextNode("SOURCE:: "+recordElement.link));
                 paragraph.appendChild(document.createElement('br'));
-                paragraph.appendChild(document.createTextNode("Channel: "+recordElement.channel.channelTitle));
+                paragraph.appendChild(document.createTextNode("CHANNEL:: "+recordElement.channel.channelTitle));
                 paragraph.appendChild(document.createElement('br'));
-                paragraph.appendChild(document.createTextNode("Date: "+recordElement.pubDate));
+                paragraph.appendChild(document.createTextNode("DATE:: "+recordElement.pubDate));
                 paragraph.appendChild(document.createElement('br'));
-                paragraph.appendChild(document.createTextNode("Load date: "+new Date(recordElement.loadEpochTimeStamp)));
+                paragraph.appendChild(document.createTextNode("LOADE DATE::  "+new Date(recordElement.loadEpochTimeStamp)));
                 
                 iconBox.appendChild(iElement);
                 iconBox.appendChild(paragraph);
@@ -347,6 +349,7 @@
                 row.appendChild(col);
                 recordsContainer.appendChild(row);
             }
+            document.getElementById("updateTime").innerHTML="Updated on: "+Date();
 
         }
 
