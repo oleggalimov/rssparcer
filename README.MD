@@ -17,6 +17,7 @@ In case of RSS 2.xx you don't need to define the rule: because of stable format 
 }
 ```
 Just add source and this default rule  on main page in section "ADD YOUR FEED" to fetch and parse data.  
+
 Less stable case is for HTML pages. You also need to provide the source and the rule. For HTML rss-flag must be set to false. Then you need to add container, title, link, pubDate, guid and channel sections, e.g.:
 ```
 {
