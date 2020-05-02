@@ -66,7 +66,8 @@ In this example defined rules for parsing elements of news feed:
 - guid - identifier for record. It is a required element. Only string values allowed. This value must be unique and very precisely defined, because it's an id for saving record in database. 
 - channel- static predefined element, contains common information about source.
 <br>
-Every of this parts represents a search rule for particular element: - searchMethod - the method for search element in a part of DOM - tree: ATTR_VALUE - search on value of HTML-attribute (e.g. class, href etc.),  VALUE - search on text value of DOM-element;
+Every of this parts represents a search rule for particular element: 
+- searchMethod - the method for search element in a part of DOM - tree: ATTR_VALUE - search on value of HTML-attribute (e.g. class, href etc.),  VALUE - search on text value of DOM-element;
 - attrName - name of viewed attribute if search method is set on ATTR_VALUE;
 - pattern - REGEX pattern, which will be applied to viewed element;
 - nestedAttr - the name of nested attribute of HTML-element, which contains value for extraction (e.g. href if there you need to extract a link to news record).
