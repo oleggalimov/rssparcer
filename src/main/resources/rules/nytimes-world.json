@@ -1,0 +1,41 @@
+{
+  "rss":false,
+  "container":{
+    "searchMethod":"ATTR_VALUE",
+    "attrName":"class",
+    "pattern":"css-ye6x8s"
+  },
+  "title":{
+    "searchMethod":"ATTR_VALUE",
+    "attrName":"class",
+    "pattern":"css-1j9dxys e1xfvim30"
+  },
+  "link":{
+    "searchMethod":"ATTR_VALUE",
+    "attrName":"href",
+    "pattern":"/\\d{4}/\\d{2}/\\d{2}",
+    "nestedAttr":"href"
+
+  },
+  "pubDate":{
+    "searchMethod":"ATTR_VALUE",
+    "attrName":"class",
+    "pattern":"css-n1vcs8 e1xfvim33"
+  },
+  "description": {
+    "searchMethod":"ATTR_VALUE",
+    "attrName":"class",
+    "pattern":"css-1echdzn e1xfvim31"
+  },
+  "guid":{
+    "searchMethod":"ATTR_VALUE",
+    "attrName":"href",
+    "pattern":"/\\d{4}/\\d{2}/\\d{2}",
+    "nestedAttr":"href"
+  },
+  "channel":{
+    "channelTitle":"World News - The New York Times",
+    "channelLink":"https://www.nytimes.com/",
+    "channelDescription":"News from NY Times"
+  }
+}

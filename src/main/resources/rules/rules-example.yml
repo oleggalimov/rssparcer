@@ -6,3 +6,4 @@
 - html:
     - https://lenta.ru/parts/news/: lenta_ru.json
     - https://www.rbc.ru/short_news: rbc_ru.json
+    - https://www.nytimes.com/section/world: nytimes-world.json

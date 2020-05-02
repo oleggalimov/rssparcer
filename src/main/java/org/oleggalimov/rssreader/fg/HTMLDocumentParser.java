@@ -49,7 +49,7 @@ public class HTMLDocumentParser implements IHTMLDocumentParser {
     }
 
     private Elements getElements(Element data, RuleElement rule) {
-        if (rule == null) {
+        if (rule == null || rule.getAttrName()==null || rule.getPattern()==null) {
             return null;
         }
         Elements result = null;

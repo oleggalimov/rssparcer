@@ -10,7 +10,7 @@ Feed reader is a simple application for parsing different news feeds. Supporting
 ## HOW IT WORKS?
 It's based on sources and rules. The source is the URL to RSS 2.xx feed, e.g. https://feeds.feedburner.com/Baeldung 
 or https://rss.nytimes.com/services/xml/rss/nyt/World.xml. The rule is the set of instructions for parsing data from source. 
-In case of RSS 2.xx you don't need to define the rule: because of stable format there is default value:
+In case of RSS 2.xx you don't need to define the rule, because of stable format there is default value:
 ``` 
 {
     "rss":true
@@ -18,7 +18,8 @@ In case of RSS 2.xx you don't need to define the rule: because of stable format 
 ```
 Just add source and this default rule  on main page in section "ADD YOUR FEED" to fetch and parse data.  
 
-Less stable case is for HTML pages. You also need to provide the source and the rule. For HTML rss-flag must be set to false. Then you need to add container, title, link, pubDate, guid and channel sections, e.g.:
+Less stable case is for HTML pages. You also need to provide the source and the rule. For HTML rss-flag must be set to false. 
+Then you need to add container, title, link, pubDate, guid and channel sections, e.g.:
 ```
 {
   "rss":false,
@@ -57,7 +58,7 @@ Less stable case is for HTML pages. You also need to provide the source and the 
 }
 ```
 In this example defined rules for parsing elements of news feed:
-- container - root container for news feed, contains all records which should be added to database;
+- container - root container in every record of feed, contains all data per record which should be added to database;
 - title - string for title of record;
 - link - link of record;
 - pubdate - date of publication news record;
