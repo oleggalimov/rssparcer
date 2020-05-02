@@ -5,6 +5,7 @@ import org.oleggalimov.rssreader.cg.CgRawDataConverter;
 import org.oleggalimov.rssreader.da.IFeedRecordsRepository;
 import org.oleggalimov.rssreader.dto.request.ExtractingRule;
 import org.oleggalimov.rssreader.dto.request.AddFeedRequest;
+import org.oleggalimov.rssreader.services.ReadFeedScheduler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,7 @@ public class FeedLoad {
     CgRawDataConverter cgRawDataConverter;
     IFeedRecordsRepository recordsRepository;
     ConcurrentHashMap<String, ExtractingRule> feedMap;
+    ReadFeedScheduler readFeedScheduler;
 
     @Autowired
     public void setCgRawDataConverter(CgRawDataConverter cgRawDataConverter) {
@@ -35,6 +37,13 @@ public class FeedLoad {
         this.feedMap = feedMap;
     }
 
+    @Autowired
+    public void setReadFeedScheduler(ReadFeedScheduler readFeedScheduler) {
+        this.readFeedScheduler = readFeedScheduler;
+    }
+
+
+
     @PostMapping("api/feed/load")
     public String loadRSS(@RequestBody AddFeedRequest request) throws IOException {
         log.debug(request.toString());
@@ -43,7 +52,8 @@ public class FeedLoad {
         }
         try {
             feedMap.put(request.getUrl(), request.getExtractingRule());
-            return "Success. Feed will updated later.";
+            readFeedScheduler.loadFeed();
+            return "Success. Feed will updated in 3 minutes";
         } catch (Exception ex) {
             log.error("Failed to put data to feed map", ex);
             return "Fail. See logs for error.";

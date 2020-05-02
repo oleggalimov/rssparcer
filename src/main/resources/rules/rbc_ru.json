@@ -1,20 +1,19 @@
 {
-  "url": "https://lenta.ru/parts/news/",
   "rss":false,
   "container":{
     "searchMethod":"ATTR_VALUE",
     "attrName":"class",
-    "pattern":"item "
+    "pattern":"item__wrap l-col-center"
   },
   "title":{
     "searchMethod":"ATTR_VALUE",
     "attrName":"class",
-    "pattern":"titles"
+    "pattern":"item__title rm-cm-item-text"
   },
   "link":{
     "searchMethod":"ATTR_VALUE",
-    "attrName":"href",
-    "pattern":"/news",
+    "attrName":"class",
+    "pattern":"item__link",
     "nestedAttr":"href"
 
   },
@@ -24,13 +23,13 @@
   },
   "guid":{
     "searchMethod":"ATTR_VALUE",
-    "attrName":"href",
-    "pattern":"/news",
+    "attrName":"class",
+    "pattern":"item__link",
     "nestedAttr":"href"
   },
   "channel":{
-    "channelTitle":"lenta.ru",
-    "channelLink":"https://lenta.ru/parts/news/",
-    "channelDescription":"Новости: Lenta.ru"
+    "channelTitle":"RBC Feed",
+    "channelLink":"https://www.rbc.ru/short_news",
+    "channelDescription":"Новости РБК"
   }
 }

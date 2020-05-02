@@ -9,6 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 public class Index {
     @GetMapping("/")
     public String index() {
-        return "improveIndex";
+        return "index";
     }
 }

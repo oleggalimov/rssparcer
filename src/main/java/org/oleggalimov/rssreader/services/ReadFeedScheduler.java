@@ -47,7 +47,7 @@ public class ReadFeedScheduler {
     }
 
     @Scheduled(fixedRate = 180000)
-    void loadFeed() {
+    public void loadFeed() {
         log.info("Tasks: {}", feedMap.size());
         Map<String, Future<Boolean>> futureList = new HashMap<>();
         feedMap.forEach((url, extractingRule) -> {

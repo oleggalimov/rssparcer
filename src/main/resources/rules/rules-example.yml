@@ -1,0 +1,8 @@
+- rss:
+    - https://feeds.feedburner.com/Baeldung
+    - https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+    - https://bash.im/rss/
+    - https://news.yandex.ru/science.rss
+- html:
+    - https://lenta.ru/parts/news/: lenta_ru.json
+    - https://www.rbc.ru/short_news: rbc_ru.json

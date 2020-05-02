@@ -1,20 +1,19 @@
 {
   "rss":false,
-  
   "container":{
     "searchMethod":"ATTR_VALUE",
     "attrName":"class",
-    "pattern":"item__wrap l-col-center"
+    "pattern":"item "
   },
   "title":{
     "searchMethod":"ATTR_VALUE",
     "attrName":"class",
-    "pattern":"item__title rm-cm-item-text"
+    "pattern":"titles"
   },
   "link":{
     "searchMethod":"ATTR_VALUE",
-    "attrName":"class",
-    "pattern":"item__link",
+    "attrName":"href",
+    "pattern":"/news",
     "nestedAttr":"href"
 
   },
@@ -24,13 +23,13 @@
   },
   "guid":{
     "searchMethod":"ATTR_VALUE",
-    "attrName":"class",
-    "pattern":"item__link",
+    "attrName":"href",
+    "pattern":"/news",
     "nestedAttr":"href"
   },
   "channel":{
-    "channelTitle":"RBC Feed",
-    "channelLink":"https://www.rbc.ru/short_news",
-    "channelDescription":"Новости РБК"
+    "channelTitle":"lenta.ru",
+    "channelLink":"https://lenta.ru/parts/news/",
+    "channelDescription":"Новости: Lenta.ru"
   }
 }

@@ -6,6 +6,7 @@ import org.oleggalimov.rssreader.dto.FeedRecord;
 import org.oleggalimov.rssreader.dto.FeedChannel;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,6 +48,7 @@ public class RSSParser implements IRSSParser {
                                     .link(nodeToString(element.getElementsByTag("link")))
                                     .pubDate(nodeToString(element.getElementsByTag("pubDate")))
                                     .description(nodeToString(element.getElementsByTag("description")))
+                                    .loadEpochTimeStamp(Instant.now().toEpochMilli())
                                     .build()
                     );
                     break;
