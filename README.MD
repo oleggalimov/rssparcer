@@ -1,13 +1,13 @@
-#RSS READER
-##WHAT IS THIS? 
+# RSS READER
+## WHAT IS THIS? 
 Feed reader is a simple application for parsing different news feeds. Supporting formats are 2.x (stable) and different HTML-pages (unstable). HTML pages should contains tree-structure news records, f.ex.: record_node -> child_nodes ->sub_child_nodes. record_node is a container for news record, which contains child_nodes with minimal information  (link, title, guid  etc., more in org.oleggalimov.rssreader.dto.FeedRecord.class) in plane text or in sub_childe_nodes. 
-##HOW TO USE?
+## HOW TO USE?
 1. Clone this project from branch master
 2. Open cmd or linux-terminal in the  project directory.
 3. Execute mvn clean install
 4. Change directory to rssparcer/target
 5. Execute java -jar rssreader-<current_version>.jar, where you need to replace <current_version> to actual version of artifact.
-##HOW IT WORKS?
+## HOW IT WORKS?
 It's based on sources and rules. The source is the URL to RSS 2.xx feed, e.g. https://feeds.feedburner.com/Baeldung 
 or https://rss.nytimes.com/services/xml/rss/nyt/World.xml. The rule is the set of instructions for parsing data from source. 
 In case of RSS 2.xx you don't need to define the rule: because of stable format there is default value:
